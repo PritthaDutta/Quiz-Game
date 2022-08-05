@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans",sans-serif;
+    font-weight: 300;
+}
+html{
+    font-size: 62.5%;
+}
+.main{
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: hsl(206, 92%, 94%);    
+}
+.inner{
+    width: 60vw;
+    background-color: #fff;
+    padding: 3rem 8rem;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem -0.7 rgba(0, 0, 0, 0.4);
+}
+.inner h2{
+    font-size: 3.5rem;
+    font-weight: 400;
+    padding: 1rem 0 4rem 0;
+}
+.inner li{
+    font-size: 2rem;
+    margin-top: 1rem;
+    list-style: none;
+}
+input{
+    cursor: pointer;
+}
+#submit,.btn{
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: #74b9ff;
+    color: #fff;
+    display: block;
+    margin-top: 4rem;
+    margin: auto;
+    margin-top: 1rem;
+    border: none;
+}
+#submit:hover{
+    color: #0984e3;
+}
+@media (max-width:700px)
+{
+    .inner{
+        width: 40vw;
+        padding: 1rem 3rem;
+    }    
+    .inner h2{
+        font-size: 2rem;
+    }
+    .inner li{
+        font-size: 1rem;
+    }
+    #submit,.btn{
+        font-size: 1rem;
+        padding: 1rem 0;
+        margin-top: 1rem;
+    }
+}
+#scorearea{
+    background-color: #dfe6e9;
+    margin-top: 3rem;
+    padding: 3rem 4rem;
+    box-shadow: 0 1rem 1rem -0.7 rgba(0, 0, 0, 0.4);   
+}
+.showscore{
+    display: none;
+}
+#scorearea h3{
+    font-size: 3rem;
+    text-align: center;
+}
+#scorearea .btn{
+    margin-top: 2rem;
+    background-color: #55efc4;
+    color: #2d3436;
+}
+#scorearea .btn:hover{
+    background-color: #00b894;
+    color: #fff;
+}
+.showscore{
+    display: none;
+}
+@media (max-width:700px)
+{
+    #scorearea{
+        padding: 1rem 2rem;
+    }
+    #scorearea h3{
+        font-size: 1rem;
+    }   
+    #scorearea .btn{
+        font-size: 1rem;
+    }
+}
