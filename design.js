@@ -49,6 +49,12 @@ const quizques = [
     },
 ];
 
+const start = document.querySelector("#start-quiz");
+const rules_box = document.querySelector(".rules_box");
+const continue_btn = rules_box.querySelector(".buttons .continue");
+const exit_btn = rules_box.querySelector(".buttons .quit");
+const inner = document.querySelector('.inner');
+const timer = inner.querySelector('.timer .timer_sec');
 const question = document.querySelector('.question');
 const option1 = document.querySelector('#op1');
 const option2 = document.querySelector('#op2');
@@ -57,6 +63,17 @@ const option4 = document.querySelector('#op4');
 const submit = document.querySelector('#submit');
 const answers = document.querySelectorAll('.answer');
 const scorearea = document.querySelector('#scorearea');
+
+start.addEventListener('click', () =>
+    {
+        start.style.display="none";
+        rules_box.style.display="block";
+    }    
+);
+exit_btn.addEventListener('click', () =>
+{
+    rules_box.style.display="none";
+});
 
 let questionCount = 0;
 let score = 0;
@@ -71,7 +88,29 @@ const loadQuestion = () => {
     option4.innerText = questionList.d;
 }
 
-loadQuestion();
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startTimer()
+{
+    let time = parseInt(30);
+    while(time>0)
+    {
+        await sleep(1000);
+        timer.innerText=(time-1);
+        time--;
+    }
+}
+
+continue_btn.addEventListener('click', () =>
+{
+    rules_box.style.display="none";
+    inner.style.display="block";
+    loadQuestion();
+    startTimer();
+} 
+);
 
 const getCheckAnswer = () =>{
     let answer;
@@ -97,11 +136,14 @@ submit.addEventListener('click', () =>{
     {
         score++;
     };
-
+    
     questionCount++;
+    deselectAll();
+
     if(questionCount < quizques.length)
     {
         loadQuestion();
+        startTimer();
     }else{
         scorearea.innerHTML =
        `<h3>You Score ${score}/${quizques.length}</h3>

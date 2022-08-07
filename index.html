@@ -8,9 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="st-btn"><button id="start-quiz">Start Quiz</button></div>
+            <div class = "rules_box" id="rules">
+                <div class="rules_title">
+                    <span>Instructions To Be Followed.</span>
+                </div>
+                <div class="rules_list">
+                    <ul>
+                        <li class="list">1.You will have only <span>30s</span> for each question.</li>
+                        <li class="list">2.Once you start the quiz you will not be able until it is completed.</li>
+                        <li class="list">3.You will not be able to answer after time gets over.</li>
+                        <li class="list">4.You will get score on the basis of your answers.</li>
+                        <li class="list"><span>Best Of Luck</span></li>
+                    </ul>
+                </div>
+                <div class="buttons">
+                    <button class="continue">Play Quiz</button>
+                    <button class="quit">Quit </button>
+
+                </div>
+            </div>
+  
     <div class="main">
         <div class="inner">
-            <h2 class="question">QUESTION</h2>
+            <header>
+                <div class = "title">Test Your Knowledge</div>
+                <div class = "timer">
+                    <div class = "time_txt">Time left: </div>
+                    <div class = "timer_sec">30</div>
+                </div>
+            </header>    
+                <h2 class="question">QUESTION</h2>
             <ul>
                 <li>
                     <input type = "radio" name="answer" id="ans1" class="answer">
