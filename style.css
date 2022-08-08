@@ -8,7 +8,7 @@
 html{
     font-size: 62.5%;
 }
-.st-btn, .rules_box{
+.st-btn{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -24,67 +24,6 @@ html{
     background: #fff;
     cursor: pointer;
 }
-.rules_box{
-    display: none;
-    width:60vw;
-    background-color: #fff;
-    border-radius: 5px;
-}
-.rules_box .rules_title{
-    height: 60px;
-    width: 100%;
-    border-bottom: 1px solid lightskyblue;
-    display: flex;
-    padding: 0 35px;
-    font-size: 3.5rem;
-    font-weight: 500;
-}
-.rules_box .rules_list{
-    padding: 15px 35px;
-}
-.rules_box .rules_list .list{
-    margin: 5px 0;
-    list-style: none;
-    font-size: 2rem;
-}
-.rules_box .rules_list .list span{
-    font-weight: 600;
-    color: #0984e3;
-}
-.rules_box .buttons{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 35px;
-}
-.rules_box .buttons button{
-    height: 50px;
-    width: 100%;
-    margin: 0 50px;
-    font-size: 3rem;
-    font-weight: 400;
-    color: #0984e3;
-    padding: 5px 30px;
-    border-radius: 5px;
-    background: #fff;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-.rules_box .buttons button.continue{
-    background-color: #74b9ff;
-    color: #fff;
-}
-.rules_box .buttons button.quit{
-    background-color: rgb(171, 187, 207);
-    color: #fff;
-}
-.rules_box .buttons button.continue:hover{
-    color: #0984e3;
-}
-.rules_box .buttons button.quit:hover{
-    color: #0984e3;
-}
 .main{
     width: 100vw;
     min-height: 100vh;
@@ -92,7 +31,7 @@ html{
     place-items: center;
     background-color: hsl(206, 92%, 94%);    
 }
-.inner{
+.rules_box,.inner{
     display: none;
     width: 60vw;
     background-color: #fff;
@@ -100,7 +39,7 @@ html{
     border-radius: 1rem;
     box-shadow: 0 1rem 1rem -0.7 rgba(0, 0, 0, 0.4);
 }
-.inner header{
+.rules_box .rules_title,.inner header{
     height:50px;
     padding: 0 30px;
     display: flex;
@@ -109,7 +48,7 @@ html{
     border-radius: 5px 5px 0 0;
     box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1); 
 }
-.inner header .title{
+.rules_box .rules_title label,.inner header .title{
     font-size: 2rem;
     font-weight: 600;
 }
@@ -146,15 +85,24 @@ html{
     font-weight: 400;
     padding: 1rem 0 4rem 0;
 }
-.inner li{
+.rules_box .rules_list,.inner li{
     font-size: 2rem;
     margin-top: 1rem;
     list-style: none;
 }
+.rules_box .rules_list .list{
+    margin: 5px 0;
+    list-style: none;
+    font-size: 2rem;
+}
+.rules_box .rules_list .list span{
+    font-weight: 600;
+    color: #0984e3;
+}
 input{
     cursor: pointer;
 }
-#submit,.btn{
+.rules_box .buttons button,#submit,.btn{
     padding: 1rem 3rem;
     font-size: 2rem;
     text-transform: uppercase;
@@ -166,22 +114,39 @@ input{
     margin-top: 1rem;
     border: none;
 }
+.rules_box .buttons button.continue{
+    background-color: #74b9ff;
+    color: #fff;
+}
+.rules_box .buttons button.quit{
+    background-color: rgb(171, 187, 207);
+    color: #fff;
+}
+.rules_box .buttons button.continue:hover{
+    color: #0984e3;
+}
+.rules_box .buttons button.quit:hover{
+    color: #0984e3;
+}
 #submit:hover{
     color: #0984e3;
 }
 @media (max-width:700px)
 {
-    .inner{
+    .rules_box,.inner{
         width: 40vw;
         padding: 1rem 3rem;
     }    
+    .rules_box .rules_title label{
+        font-size: 1rem;
+    }
     .inner h2{
         font-size: 2rem;
     }
-    .inner li{
+    .rules_box .rules_list,.inner li{
         font-size: 1rem;
     }
-    #submit,.btn{
+    .rules_box .buttons button,#submit,.btn{
         font-size: 1rem;
         padding: 1rem 0;
         margin-top: 1rem;

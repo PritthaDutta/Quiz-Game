@@ -94,7 +94,7 @@ function sleep(ms){
 
 async function startTimer()
 {
-    let time = parseInt(30);
+    let time = parseInt(15);
     while(time>0)
     {
         await sleep(1000);
